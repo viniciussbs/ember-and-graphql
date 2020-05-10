@@ -1,0 +1,15 @@
+query Author($id: ID!) {
+  Author(id: $id) {
+    id
+    name
+    description
+		Posts {
+      id
+      title
+      views
+    }
+  }
+  authorPostsMeta: _allPostsMeta(filter: { author_id: $id }) {
+    count
+  }
+}
