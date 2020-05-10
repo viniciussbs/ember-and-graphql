@@ -1,5 +1,11 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
-
-{{outlet}}
+<header>
+  <h1>Meetup Ember BR</h1>
+  <nav>
+    <ul>
+      <li><LinkTo @route="home">Página inicial</LinkTo></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  {{outlet}}
+</main>
