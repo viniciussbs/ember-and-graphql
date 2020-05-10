@@ -1,0 +1,15 @@
+query Home {
+	allPosts {
+    id
+    title
+    views
+    Author {
+      id
+      name
+    }
+  }
+  allAuthors {
+    id
+    name
+  }
+}
