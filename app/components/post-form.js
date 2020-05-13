@@ -30,9 +30,4 @@ export default class PostFormComponent extends Component {
     event.preventDefault();
     this.args.onSave(post);
   }
-
-  @action
-  setAuthorToPost(post, event) {
-    post.author_id = event.target.value;
-  }
 }

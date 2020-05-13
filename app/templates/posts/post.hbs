@@ -1,5 +1,14 @@
 <article>
   <header>
+    <nav>
+      <ul>
+        <li>
+          <LinkTo @route="posts.edit" @model={{this.model.Post.id}}>
+            Editar
+          </LinkTo>
+        </li>
+      </ul>
+    </nav>
     <h1>{{this.model.Post.title}}</h1>
     <span>{{this.model.Post.Author.name}}</span>
     <span>{{this.model.Post.views}} visualizações</span>

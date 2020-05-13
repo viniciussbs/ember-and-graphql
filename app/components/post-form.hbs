@@ -15,11 +15,11 @@
       id="post-author"
       disabled={{not this.authors}}
       {{did-insert this.loadAuthors}}
-      {{on "change" (fn this.setAuthorToPost this.post)}}
+      {{on "change" (set-target-value this "post.author_id")}}
     >
       <option value="">{{unless this.authors "Carregando..."}}</option>
       {{#each this.authors as |author|}}
-        <option value={{author.id}}>{{author.name}}</option>
+        <option value={{author.id}} selected={{eq author.id this.post.author_id}}>{{author.name}}</option>
       {{/each}}
     </select>
   </div>

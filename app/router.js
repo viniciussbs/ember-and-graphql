@@ -12,6 +12,7 @@ Router.map(function() {
   this.route('posts', function() {
     this.route('post', { path: ':id' });
     this.route('new');
+    this.route('edit', { path: ':id/edit' });
   });
 
   this.route('authors', function() {
