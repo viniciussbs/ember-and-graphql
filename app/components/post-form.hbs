@@ -1,0 +1,28 @@
+<form {{on "submit" (fn this.save this.post)}}>
+  <div>
+    <label for="post-title">Título</label>
+    <Input id="post-title" @type="text" @value={{this.post.title}}/>
+  </div>
+
+  <div>
+    <label for="post-body">Conteúdo</label>
+    <Textarea id="post-body" @value={{this.post.body}}/>
+  </div>
+
+  <div>
+    <label for="post-author">Autor</label>
+    <select
+      id="post-author"
+      disabled={{not this.authors}}
+      {{did-insert this.loadAuthors}}
+      {{on "change" (fn this.setAuthorToPost this.post)}}
+    >
+      <option value="">{{unless this.authors "Carregando..."}}</option>
+      {{#each this.authors as |author|}}
+        <option value={{author.id}}>{{author.name}}</option>
+      {{/each}}
+    </select>
+  </div>
+
+  <button type="submit">Salvar</button>
+</form>
